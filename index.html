@@ -1,623 +1,623 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta SANTIAGO BURGER</title>
-   <style>
-    /* Diseño general */
-    body {
-        background-color: #121212;
-        color: #f5f5f5;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        text-align: center;
-    }
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Carta SANTIAGO BURGER</title>
+        <style>
+            /* Diseño general */
+            body {
+                background-color: #070707;
+                color: #f5f5f5;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+            }
 
-    /* Logo */
-    #logo {
-        width: 200px;
-        display: block;
-        margin: 20px auto;
-        border-radius: 110%;
-        box-shadow: 0px 0px 15px 1px;
-    }
+            /* Logo */
+            #logo {
+                width: 200px;
+                display: block;
+                margin: 20px auto;
+                border-radius: 110%;
+                box-shadow: 0px 0px 15px 1px;
+            }
 
-    /* Estilo de los productos */
-    .producto {
-        border: 2px solid #ff8c00;
-        width: 90%;
-        margin: 20px auto;
-        min-height: 220px;
-        max-height: 450px;
-        display: flex;
-        align-items: center;
-        background-color: #1e1e1e;
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: 3px 3px 8px rgba(255, 140, 0, 0.5);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+            /* Estilo de los productos */
+            .producto {
+                border: 2px solid #ff8c00;
+                width: 90%;
+                margin: 20px auto;
+                min-height: 220px;
+                max-height: 450px;
+                display: flex;
+                align-items: center;
+                background-color: #000;
+                padding: 15px;
+                border-radius: 12px;
+                box-shadow: 3px 3px 8px rgba(255, 140, 0, 0.5);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
 
-    .producto:hover {
-        transform: scale(1.02);
-        box-shadow: 4px 4px 12px rgba(255, 140, 0, 0.7);
-    }
+            .producto:hover {
+                transform: scale(1.02);
+                box-shadow: 4px 4px 12px rgba(255, 140, 0, 0.7);
+            }
 
-    /* Imágenes */
-    .img-product {
-        width: 140px;
-        margin-left: 15px;
-        box-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5);
-        border-radius: 8px;
-    }
+            /* Imágenes */
+            .img-product {
+                width: 140px;
+                margin-left: 15px;
+                box-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5);
+                border-radius: 8px;
+            }
 
-    /* Descripción */
-    .descripcion {
-        flex-grow: 1;
-        padding-left: 25px;
-        text-align: left;
-        font-size: 16px;
-    }
+            /* Descripción */
+            .descripcion {
+                flex-grow: 1;
+                padding-left: 25px;
+                text-align: left;
+                font-size: 16px;
+            }
 
-    /* Precio */
-    .precio {
-        font-size: 20px;
-        font-weight: bold;
-        color: #ff8c00;
-    }
-</style>
+            /* Precio */
+            .precio {
+                font-size: 20px;
+                font-weight: bold;
+                color: #ff8c00;
+            }
+        </style>
 
-</head>
-<body>
-        <nav id="categorias">
-       <style>
-      .categoria {
-            display: inline-block;
-            text-align: center;
-            padding: 10px;
-            margin: 5px;
-            background-color: orangered;
-            border-radius: 5px;
-            font-size: 14px;
-            border: 3px solid #fff;
-        }
-</style>
-<section id="volveratras" class="seccion"></section>
-        <div id="categoriasCarrusel" style="width: 100%; margin: 0px !important;">
-
-            <div class="categoria"onclick="scrollToSection('hamburguesas')">🍔Hamburguesas</div>
-            <div class="categoria" onclick="scrollToSection('bebidas')">🍺Bebidas</div>
-            <div class="categoria" style="background-color:red">⭐🍔Menu SANTIAGO BURGER ESPECIAL🍔⭐</div>
-             <div class="categoria" onclick="scrollToSection('postres')">🧁Postres</div>
-            <div class="categoria" onclick="scrollToSection('perroscalientes')">🌭Perros Calientes</div>
-            <div class="categoria" onclick="scrollToSection('cachapas')">🥙Cachapas</div>
-            <div class="categoria" onclick="scrollToSection('patacones')">🌯Patacones</div>
-                   <div class="categoria" onclick="scrollToSection('salchipapas')">🍟Salchipapas</div> </div>
-    
-     <script>
-        // Scroll suave a secciones
-        function scrollToSection(sectionId) {
-            document.getElementById("volveratras-button").style.display = 'block';
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth'
-            });
-            
-            // Actualizar botón activo
-            document.querySelectorAll('#categorias button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
-        
-        // Cambiar botón activo al hacer scroll
-        window.addEventListener('scroll', function() {
-            const secciones = document.querySelectorAll('.seccion');
-            let current = '';
-            
-            secciones.forEach(seccion => {
-                const seccionTop = seccion.offsetTop;
-                if (window.scrollY >= seccionTop - 100) {
-                    current = seccion.getAttribute('id');
+        </head>
+        <body>
+                <nav id="categorias">
+            <style>
+            .categoria {
+                    display: inline-block;
+                    text-align: center;
+                    padding: 10px;
+                    margin: 5px;
+                    background-color: orangered;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    border: 3px solid #fff;
                 }
-            });
+        </style>
+        <section id="volveratras" class="seccion"></section>
+                <div id="categoriasCarrusel" style="width: 100%; margin: 0px !important;">
+
+                    <div class="categoria"onclick="scrollToSection('hamburguesas')">🍔Hamburguesas</div>
+                    <div class="categoria" onclick="scrollToSection('bebidas')">🍺Bebidas</div>
+                    <div class="categoria" style="background-color:red">⭐🍔Menu SANTIAGO BURGER ESPECIAL🍔⭐</div>
+                    <div class="categoria" onclick="scrollToSection('postres')">🧁Postres</div>
+                    <div class="categoria" onclick="scrollToSection('perroscalientes')">🌭Perros Calientes</div>
+                    <div class="categoria" onclick="scrollToSection('cachapas')">🥙Cachapas</div>
+                    <div class="categoria" onclick="scrollToSection('patacones')">🌯Patacones</div>
+                        <div class="categoria" onclick="scrollToSection('salchipapas')">🍟Salchipapas</div> </div>
             
-            document.querySelectorAll('#categorias button').forEach(button => {
-                button.classList.remove('active');
-                if (button.getAttribute('onclick').includes(current)) {
-                    button.classList.add('active');
+            <script>
+                // Scroll suave a secciones
+                function scrollToSection(sectionId) {
+                    document.getElementById("volveratras-button").style.display = 'block';
+                    document.getElementById(sectionId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Actualizar botón activo
+                    document.querySelectorAll('#categorias button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    event.target.classList.add('active');
                 }
-            });
-        });
-    </script> </nav>
+                
+                // Cambiar botón activo al hacer scroll
+                window.addEventListener('scroll', function() {
+                    const secciones = document.querySelectorAll('.seccion');
+                    let current = '';
+                    
+                    secciones.forEach(seccion => {
+                        const seccionTop = seccion.offsetTop;
+                        if (window.scrollY >= seccionTop - 100) {
+                            current = seccion.getAttribute('id');
+                        }
+                    });
+                    
+                    document.querySelectorAll('#categorias button').forEach(button => {
+                        button.classList.remove('active');
+                        if (button.getAttribute('onclick').includes(current)) {
+                            button.classList.add('active');
+                        }
+                    });
+                });
+            </script> </nav>
 
-<button id="volveratras-button" class="categoria" style="border-color: orange; color: white; background-color: rgba(255, 60, 0, 0.452); position: fixed; display: none;  font-size: 150%;  z-index: 30; " onclick="scrollToSection('volveratras');document.getElementById('volveratras-button').style.display = 'none'; ">Volver arriba</button>
-    <h1>CARTA</h1>
-    <h3 >🍔 <span style="color: orange;">SANTIAGO</span> BURGER 🍔</h3>
-    <img id="logo" src="https://i.ibb.co/6cJV7NxN/santiagoburgerlogo.jpg" alt="Logo Santiago Burger">
-<br><br><section id="hamburguesas" class="seccion"></section><h1>BURGER´S</h1>
-    <div class="producto">
-        <img src="https://i.postimg.cc/xdSbsyxw/Imagen-de-Whats-App-2025-04-30-a-las-14-10-44-117ab9b1.jpg" class="img-product" alt="La Mollejua">
-        <div class="descripcion">
-            <h3 style="color: orange;">La Mollejua</h3>
-            <p>4 Proteínas: Carne, Pollo, Chuleta, Lomito. Huevo, Tocino, Queso Gauda, Queso Cheddar, Jamón, Papas hilo, Queso de mano, Lechuga, Salsas.</p>
-            <p class="precio">$13.000</p>
-        </div>
-    </div>
-
-
-
-
-    
-    <div class="producto">
-        <img src="https://i.ibb.co/Vpj006Ks/tradicional.jpg" class="img-product" alt="La TRIFÁSICA">
-        <div class="descripcion">
-            <h3 style="color: orange;">La TRADICIONAL</h3>
-            <p>Carne o Pollo, Huevo, Tocino, Queso gauda, Queso cheddar, Jamón, Papas hilo, Queso de mano, Lechuga, Tomate, Salsas</p>
-            <p class="precio">$8.000</p>
-        </div>
-    </div>
-
-  
-    <div class="producto">
-        <img src="https://i.postimg.cc/mgHLMcD6/Imagen-de-Whats-App-2025-04-30-a-las-14-07-46-23dd573f.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">La GOLOSA</h3>
-            <p>2 Proteína Carne, Pollo o Chuleta Huevo, Tocino, Queso gauda, Queso Cheddar, Jamón, Tomate, Lechuga</p>
-            <p class="precio">$9.000</p>
-        </div>
-    </div> 
-
-
-    <div class="producto">
-        <img src="" class="img-product" alt="La TRIFÁSICA">
-        <div class="descripcion">
-            <h3 style="color: orange;">La TRIFÁSICA</h3>
-            <p>2 Proteínas: Carne, Pollo, Chuleta. Huevo, Tocino, Queso Gauda, Queso Cheddar, Jamón, Tomate, Lechuga, Papas hilo, Queso de mano, Salsas de la Casa.</p>
-            <p class="precio">$11.000</p>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-    
-    <div class="producto">
-        <img src="https://i.ibb.co/GQYDF5Qj/tumbarancho.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">TUMBA RANCHO</h3>
-            <p>Mechada, Lomo negro, Pollo mechado, Lomito</p>
-            <p class="precio"><span style="color: #fff;">1 PROTEÍNA</span><br>$5.000</p>
-            <p class="precio"><span style="color: #fff;">2 PROTEÍNAS</span><br>$8.000</p>
-            <p class="precio"><span style="color: #fff;">3 PROTEÍNAS</span><br>$11.000</p>
-        </div>
-    </div>
-
-
-        <div class="producto">
-        <img src="https://i.ibb.co/zhBv033f/4-PROTEINA.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">4 PROTEÍNA</h3>
-            <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
-            <p class="precio">$8.000</p>
-        </div>
-    </div>
-
-        <div class="producto">
-        <img src="https://i.ibb.co/GQ9wGNgk/pollochuletaburger.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">POLLO + CHULETA</h3>
-            <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
-            <p class="precio">$6.000</p>
-        </div>
-    </div>
-
-
-        <div class="producto">
-        <img src="https://i.ibb.co/hFVgdsw7/Imagen-de-Whats-App-2025-04-02-a-las-19-00-20-4546f6d5.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">CARNE + CHULETA</h3>
-            <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
-            <p class="precio">$6.000</p>
-        </div>
-    </div>
-
-
-
-
-
+        <button id="volveratras-button" class="categoria" style="border-color: orange; color: white; background-color: rgba(255, 60, 0, 0.452); position: fixed; display: none;  font-size: 150%;  z-index: 30; " onclick="scrollToSection('volveratras');document.getElementById('volveratras-button').style.display = 'none'; ">Volver arriba</button>
+            <h1>CARTA</h1>
+            <h2 >🍔 <span style="color: orange;">SANTIAGO</span> BURGER 🍔</h2>
+            <img id="logo" src="https://i.ibb.co/6cJV7NxN/santiagoburgerlogo.jpg" alt="Logo Santiago Burger">
+        <br><br><section id="hamburguesas" class="seccion"></section><h1>BURGER´S</h1>
             <div class="producto">
-        <img src="" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">CHULETA + TOCINO</h3>
-            <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
-            <p class="precio">$5.000</p>
-        </div>
-    </div>
-
-           <div class="producto">
-        <img src="https://i.ibb.co/rKKBrzSd/carnepolloburger.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">CARNE + POLLO</h3>
-            <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
-            <p class="precio">$4.500</p>
-        </div>
-    </div>
-
-
-        <div class="producto">
-        <img src="https://i.ibb.co/KxqcYSdL/carnetocinoburger.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">CARNE + TOCINO</h3>
-            <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
-            <p class="precio">$4.500</p>
-        </div>
-    </div>
-
-    
-        <div class="producto">
-        <img src="https://i.ibb.co/fVHcyv7K/pollotocinoburger.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">POLLO + TOCINO</h3>
-            <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
-            <p class="precio">$5.500</p>
-        </div>
-    </div>
+                <img src="https://i.postimg.cc/xdSbsyxw/Imagen-de-Whats-App-2025-04-30-a-las-14-10-44-117ab9b1.jpg" class="img-product" alt="La Mollejua">
+                <div class="descripcion">
+                    <h3 style="color: orange;">La Mollejua</h3>
+                    <p>4 Proteínas: Carne, Pollo, Chuleta, Lomito. Huevo, Tocino, Queso Gauda, Queso Cheddar, Jamón, Papas hilo, Queso de mano, Lechuga, Salsas.</p>
+                    <p class="precio">$13.000</p>
+                </div>
+            </div>
 
 
 
 
-
-
-
-
-
-
-           <div class="producto">
-        <img src="https://i.ibb.co/chnR1HHX/pepiperros.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">PEPI PERRO</h3>
-            <p>Lomito, Pollo, Chuleta, Chorizo, Tocino, Palta, Repollo, Tomate, Queso</p>
-            <p class="precio">$6.000</p>
-        </div>
-    </div>
-<br><br><br><br><section id="salchipapas" class="seccion"></section><h1>SALCHIPAPAS</h1>
-           <div class="producto">
-        <img src="https://i.ibb.co/VWth3v2Y/imagen-2025-04-09-214709340.png" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">SALCHIPAPA ESPECIAL</h3>
-            <p>Papas francesas, Vienesas, Queso gauda, Lechuga, Coronado de pollo, Carne, Tocino, Chuleta, Chorizo, Salsas</p>
-            <p class="precio">$8.000</p>
-        </div>
-    </div>
-
-
-
-
-
-               <div class="producto">
-        <img src="https://i.ibb.co/VWth3v2Y/imagen-2025-04-09-214709340.png" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">SALCHI POLLO</h3>
-            <p>Papas Francesas, Vienesas, Queso Gauda, Lechuga, Salsas.</p>
-            <p class="precio">$7.000</p>
-        </div>
-    </div>
-
-
-
-
-                   <div class="producto">
-        <img src="https://i.ibb.co/VWth3v2Y/imagen-2025-04-09-214709340.png" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">SALCHI LOMITO</h3>
-            <p>Papas Francesas, Vienesas, Queso Gauda, Lechuga, Salsas.</p>
-            <p class="precio">$8.000</p>
-        </div>
-    </div>
-
-
-
-
-
-
-
-               <div class="producto">
-        <img src="https://i.ibb.co/VWth3v2Y/imagen-2025-04-09-214709340.png" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">SALCHI TOCINO CHEDDAR</h3>
-            <p>Papas Francesas, Vienesas, Queso Gauda, Lechuga, Salsas.</p>
-            <p class="precio">$7.000</p>
-        </div>
-    </div>
-
-
-           <div class="producto">
-        <img src="https://i.ibb.co/j1V609z/salchipapa4500.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">SALCHIPAPAS</h3>
-            <p>Papas francesas, Salchichas, Queso gauda, Lechuga, Salsas</p>
-            <p class="precio">$4.500</p>
-        </div>
-    </div>
-
-
-<br><br><br><br>
-<section id="perroscalientes" class="seccion"></section>
-<h1>PERROS CALIENTES</h1>
-    
-
-           <div class="producto">
-        <img src="https://i.ibb.co/chnR1HHX/pepiperros.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">PEPI PERRO</h3>
-            <p>Lomito, Pollo, Chuleta, Chorizo, Tocino, Palta, Repollo, Tomate, Queso</p>
-            <p class="precio">$6.000</p>
-        </div>
-    </div>
-
-           <div class="producto">
-        <img src="https://i.ibb.co/xSjdYbgH/perroespecial.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">PERRO ESPECIAL</h3>
-            <p>Pollo, Tocino, Chuleta, Chorizo, Papas hilo, Queso rallado, Lechuga, Salsas</p>
-            <p class="precio">$3.500</p>
-        </div>
-    </div>
-
-
-       <div class="producto">
-        <img src="https://i.ibb.co/YF1c9BqT/choripan.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">CHORIPAN</h3>
-            <p>Chorizo, Queso gauda, Papas hilo, Lechuga, Salsas</p>
-            <p class="precio">$3.000</p>
-        </div>
-    </div>
-
-
-
-       <div class="producto">
-        <img src="https://i.ibb.co/DfwjnFgP/perrotocino.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">PERRO TOCINO</h3>
-            <p>Vienesa, Papas hilo, Queso gauda, Repollo, Salsas</p>
-            <p class="precio">$2.500</p>
-        </div>
-    </div>
-
-
-       <div class="producto">
-        <img src="https://i.ibb.co/V02P36V6/Imagen-de-Whats-App-2025-05-01-a-las-13-07-26-e839c996.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">PERRO MECHADA</h3>
-            <p>Vienesa, Papas hilo, Queso gauda, Repollo, Salsas, Carne mechada</p>
-            <p class="precio">$3.500</p>
-        </div>
-    </div>
-
-
-
-       <div class="producto">
-        <img src="https://i.ibb.co/vx1vTQpK/imagen-2025-05-01-143323473.png" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">PERRO SENCILLO</h3>
-            <p>Vienesa, Papas hilo, Queso gauda, Repollo, Salsas</p>
-            <p class="precio">$2.000</p>
-        </div>
-    </div>
-
-
-
-    <div class="producto">
-        <img src="https://i.ibb.co/B2B3c5XH/panconhuevo.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">PAN CON HUEVO</h3>
-            <p>Huevo, Papas hilo, Queso gauda, Repollo, Salsas</p>
-            <p class="precio">$2.000</p>
-        </div>
-    </div>
-
-
-
-<br><br><br><br><section id="patacones" class="seccion"></section><h1>PATACONES</h1>
-    
-    <div class="producto">
-        <img src="https://i.ibb.co/3YTDb2QG/patacones.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">PATACON MIXTO</h3>
-            <p>Plátano, Repollo Huevo, Jamón, Queso de mano, Queso gauda, Tocineta, Queso de año y la proteína. Mechada, Pollo, Picada o Lomito</p>
-            <p class="precio">$12.000</p>
-        </div>
-    </div>
-
-
-
-
+            
+            <div class="producto">
+                <img src="https://i.ibb.co/Vpj006Ks/tradicional.jpg" class="img-product" alt="La TRIFÁSICA">
+                <div class="descripcion">
+                    <h3 style="color: orange;">La TRADICIONAL</h3>
+                    <p>Carne o Pollo, Huevo, Tocino, Queso gauda, Queso cheddar, Jamón, Papas hilo, Queso de mano, Lechuga, Tomate, Salsas</p>
+                    <p class="precio">$8.000</p>
+                </div>
+            </div>
 
         
-    <div class="producto">
-        <img src="https://i.ibb.co/3YTDb2QG/patacones.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">PATACON TRIFÁSICO</h3>
-            <p>Mechada, Pollo, Picada o Lomito Chorizo, Chuleta, Tocino</p>
-            <p class="precio">$14.000</p>
-        </div>
-    </div>
-
-
-
-
-    <div class="producto">
-        <img src="https://i.ibb.co/3YTDb2QG/patacones.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">PATACON </h3>
-            <p>Plátano, Repollo Huevo, Jamón, Queso de mano, Queso gauda, Tocineta, Queso de año y la proteína. Mechada, Pollo, Picada o Lomito</p>
-            <p class="precio">$10.000</p>
-        </div>
-    </div>
-
-
-    <div class="producto">
-        <img src="https://i.postimg.cc/NMbJDpVp/Imagen-de-Whats-App-2025-04-30-a-las-13-13-23-514bb7c0.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">AREPÓN </h3>
-            <p>Plátano, Lechuga o Repollo Huevo, Jamón, Queso de mano, Queso gauda, Tocineta, Queso de año y la proteína. Mechada y Pollo </p>
-            <p class="precio">$10.000</p>
-        </div>
-    </div>
-
-<br><br><br><br><section id="postres" class="seccion"></section><h1>
-    POSTRES
-</h1>
-    <div class="producto">
-        <img src="https://i.ibb.co/d44BhFzz/tortadechocolate.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">TORTA DE CHOCOLATE
- </h3>
-            <p>Postre Torta de chocolate</p>
-            <p class="precio">$4.000</p>
-        </div>
-    </div>
-
-
-     <div class="producto">
-        <img src="https://i.ibb.co/fdMrJ7pD/quesillo.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">QUESILLO
- </h3>
-            <p>Postre Quesillo</p>
-            <p class="precio">$3.000</p>
-        </div>
-    </div>
-
-
-
-        <div class="producto">
-        <img src="https://i.ibb.co/k6SpvtmH/besodeangel.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">BESO DE ANGEL
-
- </h3>
-            <p>Postre Beso de angel</p>
-            <p class="precio">$2.000</p>
-        </div>
-    </div>
-
-
-
-<br><br><br><br><br><section id="cachapas" class="seccion"></section>
-<h1>CACHAPAS</h1>
-
-       <div class="producto">
-        <img src="https://i.ibb.co/8DXKqy89/caxapa1.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">CACHAPAS CON MECHADA
-
- </h3>
-            <p>Queso de mano, Natilla, Queso llanero y MECHADA</p>
-            <p class="precio">$10.000</p>
-        </div>
-    </div>
-
-       <div class="producto">
-        <img src="https://i.ibb.co/8DXKqy89/caxapa1.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">CACHAPAS CON LOMITO
-
- </h3>
-            <p>Queso de mano, Natilla, Queso llanero y LOMITO</p>
-            <p class="precio">$10.000</p>
-        </div>
-    </div>
+            <div class="producto">
+                <img src="https://i.postimg.cc/mgHLMcD6/Imagen-de-Whats-App-2025-04-30-a-las-14-07-46-23dd573f.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">La GOLOSA</h3>
+                    <p>2 Proteína Carne, Pollo o Chuleta Huevo, Tocino, Queso gauda, Queso Cheddar, Jamón, Tomate, Lechuga</p>
+                    <p class="precio">$9.000</p>
+                </div>
+            </div> 
 
 
             <div class="producto">
-        <img src="https://i.ibb.co/d4RjkCfc/caxapa.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">CACHAPA CLÁSICA
+                <img src="" class="img-product" alt="La TRIFÁSICA">
+                <div class="descripcion">
+                    <h3 style="color: orange;">La TRIFÁSICA</h3>
+                    <p>2 Proteínas: Carne, Pollo, Chuleta. Huevo, Tocino, Queso Gauda, Queso Cheddar, Jamón, Tomate, Lechuga, Papas hilo, Queso de mano, Salsas de la Casa.</p>
+                    <p class="precio">$11.000</p>
+                </div>
+            </div>
 
- </h3>
-            <p>Queso de mano, Natilla, Queso llanero</p>
-            <p class="precio">$7.000</p>
-        </div>
-    </div>
 
-<br><br><br><br><br><section id="bebidas" class="seccion"></section>
-<h1>BEBIDAS</h1>
+
+
+
+
+
+
+            
             <div class="producto">
-        <img src="https://i.ibb.co/KxPNXmyQ/spritelata.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">Sprite en lata
-
- </h3>
-            <p>Sprite en lata 350ml</p>
-            <p class="precio">$1.500</p>
-        </div>
-    </div>
-
-
-
-          <div class="producto">
-        <img src="https://i.ibb.co/TqTT7sN6/cocacolalata.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">Cocacola en lata
-
- </h3>
-            <p>Cocacola en lata 350ml</p>
-            <p class="precio">$1.500</p>
-        </div>
-    </div>
-
-      <div class="producto">
-        <img src="https://i.ibb.co/nN7b9dQ0/fantalata.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">Fanta en lata
-
- </h3>
-            <p>Fanta en lata 350ml</p>
-            <p class="precio">$1.500</p>
-        </div>
-    </div>
+                <img src="https://i.ibb.co/GQYDF5Qj/tumbarancho.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">TUMBA RANCHO</h3>
+                    <p>Mechada, Lomo negro, Pollo mechado, Lomito</p>
+                    <p class="precio"><span style="color: #fff;">1 PROTEÍNA</span><br>$5.000</p>
+                    <p class="precio"><span style="color: #fff;">2 PROTEÍNAS</span><br>$8.000</p>
+                    <p class="precio"><span style="color: #fff;">3 PROTEÍNAS</span><br>$11.000</p>
+                </div>
+            </div>
 
 
+                <div class="producto">
+                <img src="https://i.ibb.co/zhBv033f/4-PROTEINA.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">4 PROTEÍNA</h3>
+                    <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
+                    <p class="precio">$8.000</p>
+                </div>
+            </div>
+
+                <div class="producto">
+                <img src="https://i.ibb.co/GQ9wGNgk/pollochuletaburger.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">POLLO + CHULETA</h3>
+                    <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
+                    <p class="precio">$6.000</p>
+                </div>
+            </div>
 
 
-    
-      <div class="producto">
-        <img src="https://i.ibb.co/chfyL5Gd/maltalata.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">Malta en lata
-
- </h3>
-            <p>Malta en lata 355ml</p>
-            <p class="precio">$2.000</p>
-        </div>
-    </div>
+                <div class="producto">
+                <img src="https://i.ibb.co/hFVgdsw7/Imagen-de-Whats-App-2025-04-02-a-las-19-00-20-4546f6d5.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">CARNE + CHULETA</h3>
+                    <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
+                    <p class="precio">$6.000</p>
+                </div>
+            </div>
 
 
 
 
-    
-      <div class="producto">
-        <img src="https://i.ibb.co/K1TV3My/papelonconlimon.jpg" class="img-product" alt="FOTO">
-        <div class="descripcion">
-            <h3 style="color: orange;">Papelon con limón
 
- </h3>
-            <p>Papelon con limón 500ml</p>
-            <p class="precio">$1.500</p>
-        </div>
-    </div>
+                    <div class="producto">
+                <img src="" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">CHULETA + TOCINO</h3>
+                    <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
+                    <p class="precio">$5.000</p>
+                </div>
+            </div>
 
-   
+                <div class="producto">
+                <img src="https://i.ibb.co/rKKBrzSd/carnepolloburger.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">CARNE + POLLO</h3>
+                    <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
+                    <p class="precio">$4.500</p>
+                </div>
+            </div>
 
 
-</body>
-</html>
+                <div class="producto">
+                <img src="https://i.ibb.co/KxqcYSdL/carnetocinoburger.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">CARNE + TOCINO</h3>
+                    <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
+                    <p class="precio">$4.500</p>
+                </div>
+            </div>
+
+            
+                <div class="producto">
+                <img src="https://i.ibb.co/fVHcyv7K/pollotocinoburger.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">POLLO + TOCINO</h3>
+                    <p>Lechuga, Tomate, Papas hilo, Queso gauda, Queso cheddar, Salsas de la Casa</p>
+                    <p class="precio">$5.500</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="producto">
+                <img src="https://i.ibb.co/chnR1HHX/pepiperros.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">PEPI PERRO</h3>
+                    <p>Lomito, Pollo, Chuleta, Chorizo, Tocino, Palta, Repollo, Tomate, Queso</p>
+                    <p class="precio">$6.000</p>
+                </div>
+            </div>
+        <br><br><br><br><section id="salchipapas" class="seccion"></section><h1>SALCHIPAPAS</h1>
+                <div class="producto">
+                <img src="https://i.ibb.co/VWth3v2Y/imagen-2025-04-09-214709340.png" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">SALCHIPAPA ESPECIAL</h3>
+                    <p>Papas francesas, Vienesas, Queso gauda, Lechuga, Coronado de pollo, Carne, Tocino, Chuleta, Chorizo, Salsas</p>
+                    <p class="precio">$8.000</p>
+                </div>
+            </div>
+
+
+
+
+
+                    <div class="producto">
+                <img src="https://i.ibb.co/VWth3v2Y/imagen-2025-04-09-214709340.png" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">SALCHI POLLO</h3>
+                    <p>Papas Francesas, Vienesas, Queso Gauda, Lechuga, Salsas.</p>
+                    <p class="precio">$7.000</p>
+                </div>
+            </div>
+
+
+
+
+                        <div class="producto">
+                <img src="https://i.ibb.co/VWth3v2Y/imagen-2025-04-09-214709340.png" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">SALCHI LOMITO</h3>
+                    <p>Papas Francesas, Vienesas, Queso Gauda, Lechuga, Salsas.</p>
+                    <p class="precio">$8.000</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+                    <div class="producto">
+                <img src="https://i.ibb.co/VWth3v2Y/imagen-2025-04-09-214709340.png" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">SALCHI TOCINO CHEDDAR</h3>
+                    <p>Papas Francesas, Vienesas, Queso Gauda, Lechuga, Salsas.</p>
+                    <p class="precio">$7.000</p>
+                </div>
+            </div>
+
+
+                <div class="producto">
+                <img src="https://i.ibb.co/j1V609z/salchipapa4500.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">SALCHIPAPAS</h3>
+                    <p>Papas francesas, Salchichas, Queso gauda, Lechuga, Salsas</p>
+                    <p class="precio">$4.500</p>
+                </div>
+            </div>
+
+
+        <br><br><br><br>
+        <section id="perroscalientes" class="seccion"></section>
+        <h1>PERROS CALIENTES</h1>
+            
+
+                <div class="producto">
+                <img src="https://i.ibb.co/chnR1HHX/pepiperros.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">PEPI PERRO</h3>
+                    <p>Lomito, Pollo, Chuleta, Chorizo, Tocino, Palta, Repollo, Tomate, Queso</p>
+                    <p class="precio">$6.000</p>
+                </div>
+            </div>
+
+                <div class="producto">
+                <img src="https://i.ibb.co/xSjdYbgH/perroespecial.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">PERRO ESPECIAL</h3>
+                    <p>Pollo, Tocino, Chuleta, Chorizo, Papas hilo, Queso rallado, Lechuga, Salsas</p>
+                    <p class="precio">$3.500</p>
+                </div>
+            </div>
+
+
+            <div class="producto">
+                <img src="https://i.ibb.co/YF1c9BqT/choripan.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">CHORIPAN</h3>
+                    <p>Chorizo, Queso gauda, Papas hilo, Lechuga, Salsas</p>
+                    <p class="precio">$3.000</p>
+                </div>
+            </div>
+
+
+
+            <div class="producto">
+                <img src="https://i.ibb.co/DfwjnFgP/perrotocino.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">PERRO TOCINO</h3>
+                    <p>Vienesa, Papas hilo, Queso gauda, Repollo, Salsas</p>
+                    <p class="precio">$2.500</p>
+                </div>
+            </div>
+
+
+            <div class="producto">
+                <img src="https://i.ibb.co/V02P36V6/Imagen-de-Whats-App-2025-05-01-a-las-13-07-26-e839c996.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">PERRO MECHADA</h3>
+                    <p>Vienesa, Papas hilo, Queso gauda, Repollo, Salsas, Carne mechada</p>
+                    <p class="precio">$3.500</p>
+                </div>
+            </div>
+
+
+
+            <div class="producto">
+                <img src="https://i.ibb.co/vx1vTQpK/imagen-2025-05-01-143323473.png" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">PERRO SENCILLO</h3>
+                    <p>Vienesa, Papas hilo, Queso gauda, Repollo, Salsas</p>
+                    <p class="precio">$2.000</p>
+                </div>
+            </div>
+
+
+
+            <div class="producto">
+                <img src="https://i.ibb.co/B2B3c5XH/panconhuevo.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">PAN CON HUEVO</h3>
+                    <p>Huevo, Papas hilo, Queso gauda, Repollo, Salsas</p>
+                    <p class="precio">$2.000</p>
+                </div>
+            </div>
+
+
+
+        <br><br><br><br><section id="patacones" class="seccion"></section><h1>PATACONES</h1>
+            
+            <div class="producto">
+                <img src="https://i.ibb.co/3YTDb2QG/patacones.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">PATACON MIXTO</h3>
+                    <p>Plátano, Repollo Huevo, Jamón, Queso de mano, Queso gauda, Tocineta, Queso de año y la proteína. Mechada, Pollo, Picada o Lomito</p>
+                    <p class="precio">$12.000</p>
+                </div>
+            </div>
+
+
+
+
+
+                
+            <div class="producto">
+                <img src="https://i.ibb.co/3YTDb2QG/patacones.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">PATACON TRIFÁSICO</h3>
+                    <p>Mechada, Pollo, Picada o Lomito Chorizo, Chuleta, Tocino</p>
+                    <p class="precio">$14.000</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="producto">
+                <img src="https://i.ibb.co/3YTDb2QG/patacones.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">PATACON </h3>
+                    <p>Plátano, Repollo Huevo, Jamón, Queso de mano, Queso gauda, Tocineta, Queso de año y la proteína. Mechada, Pollo, Picada o Lomito</p>
+                    <p class="precio">$10.000</p>
+                </div>
+            </div>
+
+
+            <div class="producto">
+                <img src="https://i.postimg.cc/NMbJDpVp/Imagen-de-Whats-App-2025-04-30-a-las-13-13-23-514bb7c0.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">AREPÓN </h3>
+                    <p>Plátano, Lechuga o Repollo Huevo, Jamón, Queso de mano, Queso gauda, Tocineta, Queso de año y la proteína. Mechada y Pollo </p>
+                    <p class="precio">$10.000</p>
+                </div>
+            </div>
+
+        <br><br><br><br><section id="postres" class="seccion"></section><h1>
+            POSTRES
+        </h1>
+            <div class="producto">
+                <img src="https://i.ibb.co/d44BhFzz/tortadechocolate.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">TORTA DE CHOCOLATE
+        </h3>
+                    <p>Postre Torta de chocolate</p>
+                    <p class="precio">$4.000</p>
+                </div>
+            </div>
+
+
+            <div class="producto">
+                <img src="https://i.ibb.co/fdMrJ7pD/quesillo.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">QUESILLO
+        </h3>
+                    <p>Postre Quesillo</p>
+                    <p class="precio">$3.000</p>
+                </div>
+            </div>
+
+
+
+                <div class="producto">
+                <img src="https://i.ibb.co/k6SpvtmH/besodeangel.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">BESO DE ANGEL
+
+        </h3>
+                    <p>Postre Beso de angel</p>
+                    <p class="precio">$2.000</p>
+                </div>
+            </div>
+
+
+
+        <br><br><br><br><br><section id="cachapas" class="seccion"></section>
+        <h1>CACHAPAS</h1>
+
+            <div class="producto">
+                <img src="https://i.ibb.co/8DXKqy89/caxapa1.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">CACHAPAS CON MECHADA
+
+        </h3>
+                    <p>Queso de mano, Natilla, Queso llanero y MECHADA</p>
+                    <p class="precio">$10.000</p>
+                </div>
+            </div>
+
+            <div class="producto">
+                <img src="https://i.ibb.co/8DXKqy89/caxapa1.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">CACHAPAS CON LOMITO
+
+        </h3>
+                    <p>Queso de mano, Natilla, Queso llanero y LOMITO</p>
+                    <p class="precio">$10.000</p>
+                </div>
+            </div>
+
+
+                    <div class="producto">
+                <img src="https://i.ibb.co/d4RjkCfc/caxapa.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">CACHAPA CLÁSICA
+
+        </h3>
+                    <p>Queso de mano, Natilla, Queso llanero</p>
+                    <p class="precio">$7.000</p>
+                </div>
+            </div>
+
+        <br><br><br><br><br><section id="bebidas" class="seccion"></section>
+        <h1>BEBIDAS</h1>
+                    <div class="producto">
+                <img src="https://i.ibb.co/KxPNXmyQ/spritelata.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">Sprite en lata
+
+        </h3>
+                    <p>Sprite en lata 350ml</p>
+                    <p class="precio">$1.500</p>
+                </div>
+            </div>
+
+
+
+                <div class="producto">
+                <img src="https://i.ibb.co/TqTT7sN6/cocacolalata.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">Cocacola en lata
+
+        </h3>
+                    <p>Cocacola en lata 350ml</p>
+                    <p class="precio">$1.500</p>
+                </div>
+            </div>
+
+            <div class="producto">
+                <img src="https://i.ibb.co/nN7b9dQ0/fantalata.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">Fanta en lata
+
+        </h3>
+                    <p>Fanta en lata 350ml</p>
+                    <p class="precio">$1.500</p>
+                </div>
+            </div>
+
+
+
+
+            
+            <div class="producto">
+                <img src="https://i.ibb.co/chfyL5Gd/maltalata.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">Malta en lata
+
+        </h3>
+                    <p>Malta en lata 355ml</p>
+                    <p class="precio">$2.000</p>
+                </div>
+            </div>
+
+
+
+
+            
+            <div class="producto">
+                <img src="https://i.ibb.co/K1TV3My/papelonconlimon.jpg" class="img-product" alt="FOTO">
+                <div class="descripcion">
+                    <h3 style="color: orange;">Papelon con limón
+
+        </h3>
+                    <p>Papelon con limón 500ml</p>
+                    <p class="precio">$1.500</p>
+                </div>
+            </div>
+
+        
+
+
+        </body>
+        </html>
 
 
 
