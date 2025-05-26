@@ -69,10 +69,72 @@
 
 </head>
 <body>
+        <nav id="categorias">
+       <style>
+      .categoria {
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+            background-color: orangered;
+            border-radius: 5px;
+            font-size: 14px;
+            border: 3px solid #fff;
+        }
+</style>
+<section id="volveratras" class="seccion"></section>
+        <div id="categoriasCarrusel" style="width: 100%; margin: 0px !important;">
+
+            <div class="categoria"onclick="scrollToSection('hamburguesas')">🍔Hamburguesas</div>
+            <div class="categoria" onclick="scrollToSection('bebidas')">🍺Bebidas</div>
+            <div class="categoria" style="background-color:red">⭐🍔Menu SANTIAGO BURGER ESPECIAL🍔⭐</div>
+             <div class="categoria" onclick="scrollToSection('postres')">🧁Postres</div>
+            <div class="categoria" onclick="scrollToSection('perroscalientes')">🌭Perros Calientes</div>
+            <div class="categoria" onclick="scrollToSection('cachapas')">🥙Cachapas</div>
+            <div class="categoria" onclick="scrollToSection('patacones')">🌯Patacones</div>
+                   <div class="categoria" onclick="scrollToSection('salchipapas')">🍟Salchipapas</div> </div>
+    
+     <script>
+        // Scroll suave a secciones
+        function scrollToSection(sectionId) {
+            document.getElementById("volveratras-button").style.display = 'block';
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Actualizar botón activo
+            document.querySelectorAll('#categorias button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // Cambiar botón activo al hacer scroll
+        window.addEventListener('scroll', function() {
+            const secciones = document.querySelectorAll('.seccion');
+            let current = '';
+            
+            secciones.forEach(seccion => {
+                const seccionTop = seccion.offsetTop;
+                if (window.scrollY >= seccionTop - 100) {
+                    current = seccion.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('#categorias button').forEach(button => {
+                button.classList.remove('active');
+                if (button.getAttribute('onclick').includes(current)) {
+                    button.classList.add('active');
+                }
+            });
+        });
+    </script> </nav>
+
+<button id="volveratras-button" class="categoria" style="color: white; background-color: rgba(255, 60, 0, 0.452); position: fixed; display: none;  font-size: 150%;  z-index: 30; " onclick="scrollToSection('volveratras');document.getElementById('volveratras-button').style.display = 'none'; ">Volver arriba</button>
     <h1>CARTA</h1>
     <h3 >🍔 <span style="color: orange;">SANTIAGO</span> BURGER 🍔</h3>
     <img id="logo" src="https://i.ibb.co/6cJV7NxN/santiagoburgerlogo.jpg" alt="Logo Santiago Burger">
-<br><br><h1>BURGER´S</h1>
+<br><br><section id="hamburguesas" class="seccion"></section><h1>BURGER´S</h1>
     <div class="producto">
         <img src="https://i.postimg.cc/xdSbsyxw/Imagen-de-Whats-App-2025-04-30-a-las-14-10-44-117ab9b1.jpg" class="img-product" alt="La Mollejua">
         <div class="descripcion">
@@ -222,7 +284,7 @@
             <p class="precio">$6.000</p>
         </div>
     </div>
-<br><br><br><br><h1>SALCHIPAPAS</h1>
+<br><br><br><br><section id="salchipapas" class="seccion"></section><h1>SALCHIPAPAS</h1>
            <div class="producto">
         <img src="https://i.ibb.co/VWth3v2Y/imagen-2025-04-09-214709340.png" class="img-product" alt="FOTO">
         <div class="descripcion">
@@ -284,7 +346,7 @@
 
 
 <br><br><br><br>
-
+<section id="perroscalientes" class="seccion"></section>
 <h1>PERROS CALIENTES</h1>
     
 
@@ -361,7 +423,7 @@
 
 
 
-<br><br><br><br><h1>PATACONES</h1>
+<br><br><br><br><section id="patacones" class="seccion"></section><h1>PATACONES</h1>
     
     <div class="producto">
         <img src="https://i.ibb.co/3YTDb2QG/patacones.jpg" class="img-product" alt="FOTO">
@@ -408,7 +470,7 @@
         </div>
     </div>
 
-<br><br><br><br><h1>
+<br><br><br><br><section id="postres" class="seccion"></section><h1>
     POSTRES
 </h1>
     <div class="producto">
@@ -447,7 +509,7 @@
 
 
 
-<br><br><br><br><br>
+<br><br><br><br><br><section id="cachapas" class="seccion"></section>
 <h1>CACHAPAS</h1>
 
        <div class="producto">
@@ -484,7 +546,7 @@
         </div>
     </div>
 
-<br><br><br><br><br>
+<br><br><br><br><br><section id="bebidas" class="seccion"></section>
 <h1>BEBIDAS</h1>
             <div class="producto">
         <img src="https://i.ibb.co/KxPNXmyQ/spritelata.jpg" class="img-product" alt="FOTO">
